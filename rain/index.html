@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rain.css" type="text/css">
+    <title>暴雨背后的学问</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#dialogue").click(function(){
+    		 	$(".dialogue").fadeOut(1000);
+    	  	})
+    	})
+    </script>
+	<img src="img/reporter.png" class="reporter"/>
+	<div class="dialogue">
+		<div id="dialogue"></div>
+	</div>
+	<div class="cloud"></div>
+	<script>
+    var text = "河南郑州特大暴雨引起了全人民的关注";
+    var num = text.length;
+    var i =0;
+    function show() {
+        var shower = text.substr(0,i);
+        document.getElementById("dialogue").innerHTML = shower;
+        i++;
+        if(i + 1 >= num){
+            clearInterval("done");
+        }
+    }
+    var done=setInterval("show()",200);
+	</script>
+</body>
+</html>
